@@ -24,5 +24,12 @@ func main() {
 	contactInfo.postcode = "SW11 ER6"
 	tony.contactInfo = contactInfo
 
+	tony.updateName("Tonaaaaay")
+
 	fmt.Println(alex, bob, tony)
+}
+
+// Go is pass by value, so we need to use a pointer in order to make sure we updated the original person
+func (p *person) updateName(n string) {
+	p.firstName = n
 }
